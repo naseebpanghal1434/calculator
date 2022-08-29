@@ -128,7 +128,7 @@ function result(){
     const getInputValue = document.querySelector("#inputNumbersID");
     let resultString = getInputValue.value;
 
-    let finalResultString = resultString.replace(/[&\=\\#,()$~%.'":?<>{}]/g, '')
+    let finalResultString = resultString.replace(/[&\=\\#,()$~'":?<>{}]/g, '')
 
     console.log(finalResultString);
     getInputValue.value = `${finalResultString} = ${eval(finalResultString)}`
