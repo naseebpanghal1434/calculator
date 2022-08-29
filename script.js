@@ -69,55 +69,68 @@ function div(){
     console.log(getInputValue.value);
 }
 
-function result(){
-    const getInputValue = document.querySelector("#inputNumbersID");
-    let resultString = getInputValue.value;
-    resultString = resultString.match(/(\d+|[^\d]+)/g);
-    // console.log(resultString);
+// function result(){
+//     const getInputValue = document.querySelector("#inputNumbersID");
+//     let resultString = getInputValue.value;
+//     resultString = resultString.match(/(\d+|[^\d]+)/g);
+//     // console.log(resultString);
 
-    function calCulator(...resultString){
-        let storeFirstNum = parseInt(resultString[0]);
-        let storeSecondNum = parseInt(resultString[2]);
-        let storeOp = resultString[1];
-        let finalResult = 0;
+//     function calCulator(...resultString){
+//         let storeFirstNum = parseInt(resultString[0]);
+//         let storeSecondNum = parseInt(resultString[2]);
+//         let storeOp = resultString[1];
+//         let finalResult = 0;
 
-        console.log();
+//         console.log();
 
-        switch(storeOp){
-            case "+": {
-                finalResult = storeFirstNum + storeSecondNum;
-                getInputValue.value = " ";
-                getInputValue.value = finalResult;
-                console.log(finalResult);
-                break;
-            }
-            case "-": {
-                finalResult = storeFirstNum - storeSecondNum;
-                getInputValue.value = " ";
-                getInputValue.value = finalResult;
-                console.log(finalResult);
-                break;
-            }
-            case "*": {
-                finalResult = storeFirstNum * storeSecondNum;
-                getInputValue.value = " ";
-                getInputValue.value = finalResult;
-                console.log(finalResult);
-                break;
-            }
-            case "/": {
-                finalResult = storeFirstNum / storeSecondNum;
-                getInputValue.value = " ";
-                getInputValue.value = finalResult;
-                console.log(finalResult);
-                break;
-            }
-        }
-    }
-    calCulator(...resultString);
-}
+//         switch(storeOp){
+//             case "+": {
+//                 finalResult = storeFirstNum + storeSecondNum;
+//                 getInputValue.value = " ";
+//                 getInputValue.value = finalResult;
+//                 console.log(finalResult);
+//                 break;
+//             }
+//             case "-": {
+//                 finalResult = storeFirstNum - storeSecondNum;
+//                 getInputValue.value = " ";
+//                 getInputValue.value = finalResult;
+//                 console.log(finalResult);
+//                 break;
+//             }
+//             case "*": {
+//                 finalResult = storeFirstNum * storeSecondNum;
+//                 getInputValue.value = " ";
+//                 getInputValue.value = finalResult;
+//                 console.log(finalResult);
+//                 break;
+//             }
+//             case "/": {
+//                 finalResult = storeFirstNum / storeSecondNum;
+//                 getInputValue.value = " ";
+//                 getInputValue.value = finalResult;
+//                 console.log(finalResult);
+//                 break;
+//             }
+//         }
+//     }
+//     calCulator(...resultString);
+// }
 
 function reset(){
     const getInputValue = document.querySelector("#inputNumbersID");
     getInputValue.value = "";
+}
+
+
+
+function result(){
+    const getInputValue = document.querySelector("#inputNumbersID");
+    let resultString = getInputValue.value;
+
+    let finalResultString = resultString.replace(/[&\=\\#,()$~%.'":?<>{}]/g, '')
+
+    console.log(finalResultString);
+    getInputValue.value = `${finalResultString} = ${eval(finalResultString)}`
+
 }
