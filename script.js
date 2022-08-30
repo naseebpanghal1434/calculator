@@ -1,5 +1,4 @@
 const getInputValue = document.querySelector("#inputNumbersID");
-getInputValue.disabled = true;
 
 const num1 =  () => getInputValue.value += 1;
 const num2 =  () => getInputValue.value += 2;
