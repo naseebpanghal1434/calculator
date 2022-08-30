@@ -17,32 +17,7 @@ const div = () => getInputValue.value += "/";
 const numDot = () => getInputValue.value += ".";
 
 
-
-let fetchExpBox = document.querySelector(".expBox");
-function result() {
-
-    let finalResultString = (getInputValue.value).replace(/[&\=\\#,()$~'":?<>@{}A-Za-z]/g, '');
-
-    if(finalResultString === ""){
-        getInputValue.value = "";
-        fetchExpBox.innerText = `Enter Valid Number`;
-    }else{
-        getInputValue.value = `${eval(finalResultString)}`;
-        fetchExpBox.innerText = `${finalResultString} `;
-    }
-}
-
-function clearLastString(){
-    getInputValue.value = (getInputValue.value).slice(0,-1);
-    fetchExpBox.innerText = "";
-
-}
-
-function reset() {
-    getInputValue.value = ""; 
-    fetchExpBox.innerText = "";
-}
-
+//Check and Validate Input Data In Input text Field.
 getInputValue.addEventListener('input', function () { 
 
     let getInputdata = getInputValue.value;
@@ -55,3 +30,29 @@ getInputValue.addEventListener('input', function () {
         getInputValue.value = `${finalResultString}`;
     }    
 })
+
+
+
+let fetchExpBox = document.querySelector(".expBox");
+function result() {
+
+    let finalResultString = getInputValue.value;
+    let result = `${eval(finalResultString)}`
+
+    if(result === "undefined"){
+        fetchExpBox.innerText = `Invalid Expression`;
+        getInputValue.value = ``;
+    }else{
+        getInputValue.value = `${result}`;
+        fetchExpBox.innerText = `${finalResultString} `;
+    }
+}
+function clearLastString(){
+    getInputValue.value = (getInputValue.value).slice(0,-1);
+    fetchExpBox.innerText = "";
+}
+
+function reset() {
+    getInputValue.value = ""; 
+    fetchExpBox.innerText = "";
+}
