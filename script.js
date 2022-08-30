@@ -23,15 +23,10 @@ function result() {
 
     let finalResultString = (getInputValue.value).replace(/[&\=\\#,()$~'":?<>@{}A-Za-z]/g, '');
 
-    // let finalResultString = (getInputValue.value).replace(/[^\d-]/g, '');
-
-
-    console.log(finalResultString);
-
     getInputValue.value = `${eval(finalResultString)}`;
 
     function setlabel(finalResultString) {
-        fetchExpBox.innerText = `${finalResultString} = `;
+        fetchExpBox.innerText = `${finalResultString} `;
     }
     setlabel(finalResultString);
 }
