@@ -43,22 +43,32 @@ function reset() {
     fetchExpBox.innerText = "";
 }
 
-getInputValue.addEventListener('keypress', function (e){
-    let keyEntered = e.which || e.keyCode;
-    if(keyEntered >47 && keyEntered <58) {
+// getInputValue.addEventListener('keypress', function (e){
+//     let keyEntered = e.which || e.keyCode;
+//     if(keyEntered >47 && keyEntered <58) {
+//         return true;
+//     }else if(keyEntered == 190){
+//         return true;
+//     }else if(keyEntered >41 && keyEntered <44){
+//         return true
+//     }else if(keyEntered == 45){
+//         return true;
+//     }else if(keyEntered == 47){
+//         return true;
+//     }else if(keyEntered == 13){
+//         return result();
+//     }
+//     else{
+//         return fetchExpBox.innerText = `Enter Valid Number`;
+//     }
+// })
+
+getInputValue.addEventListener('input', function () { 
+    let lastchar = (getInputValue.value).slice(-1);
+    let validator = lastchar.replace(/[0-9+*/.-]/g, '');
+    if(validator == ""){
         return true;
-    }else if(keyEntered == 190){
-        return true;
-    }else if(keyEntered >41 && keyEntered <44){
-        return true
-    }else if(keyEntered == 45){
-        return true;
-    }else if(keyEntered == 47){
-        return true;
-    }else if(keyEntered == 13){
-        return result();
-    }
-    else{
-        return fetchExpBox.innerText = `Enter Valid Number`;
-    }
+    }else{
+        fetchExpBox.innerText = `Enter Valid Number`;
+    }    
 })
