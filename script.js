@@ -21,7 +21,12 @@ const numDot = () => getInputValue.value += ".";
 let fetchExpBox = document.querySelector(".expBox");
 function result() {
 
-    let finalResultString = (getInputValue.value).replace(/[&\=\\#,()$~'":?<>{}]/g, '');
+    let finalResultString = (getInputValue.value).replace(/[&\=\\#,()$~'":?<>@{}A-Za-z]/g, '');
+
+    // let finalResultString = (getInputValue.value).replace(/[^\d-]/g, '');
+
+
+    console.log(finalResultString);
 
     getInputValue.value = `${eval(finalResultString)}`;
 
