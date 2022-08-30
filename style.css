@@ -58,9 +58,6 @@ header{
 .zeroBtn{
     grid-column: 2/ span 2
 }
-.reset{
-    grid-column: 1/2
-}
 .result{
     grid-column: 3/5;
 }
