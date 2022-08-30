@@ -24,7 +24,7 @@ function result() {
     let finalResultString = (getInputValue.value).replace(/[&\=\\#,()$~'":?<>@{}A-Za-z]/g, '');
 
     if(finalResultString === ""){
-        getInputValue.value = `NaN`;
+        getInputValue.value = "";
         fetchExpBox.innerText = `Enter Valid Number`;
     }else{
         getInputValue.value = `${eval(finalResultString)}`;
