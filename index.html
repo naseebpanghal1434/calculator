@@ -11,36 +11,41 @@
 </head>
 
 <body>
+    <header>
+        <nav>
+            <h1>Calculator</h1>
+        </nav>
+    </header>
     <main>
-        <h1>Calculator</h1>
         <div class="container">
-            <div>
-                <div class="userInput">
-                    <input type="text" name="inputNumbers" id="inputNumbersID">
-                </div>
-                <div class="inputNumButtons">
-                    <button onclick="num1()">1</button>
-                    <button onclick="num2()">2</button>
-                    <button onclick="num3()">3</button>
-                    <button onclick="num4()">4</button>
-                    <button onclick="num5()">5</button>
-                    <button onclick="num6()">6</button>
-                    <button onclick="num7()">7</button>
-                    <button onclick="num8()">8</button>
-                    <button onclick="num9()">9</button>
-                    <button onclick="num0()">0</button>
-                    <button onclick="add()">+</button>
-                    <button onclick="sub()">-</button>
-                    <button onclick="mul()">*</button>
-                    <button onclick="div()">/</button>
-                    <button onclick="result()">=</button>
-                </div>
-                <div class="reset">
-                    <button onclick="reset()">Clear</button>
-                </div>
+
+            <div class="outputBox">
+                <p class="expBox"></p>
+                <input type="text" name="inputNumbers" id="inputNumbersID">
+            </div>
+
+            <div class="inputNumButtons">
+                <button onclick="num7()">7</button>
+                <button onclick="num8()">8</button>
+                <button onclick="num9()">9</button>
+                <button onclick="div()">/</button>
+                <button onclick="num4()">4</button>
+                <button onclick="num5()">5</button>
+                <button onclick="num6()">6</button>
+                <button onclick="mul()">*</button>
+                <button onclick="num1()">1</button>
+                <button onclick="num2()">2</button>
+                <button onclick="num3()">3</button>
+                <button onclick="sub()">-</button>
+                <button onclick="numDot()">.</button>
+                <button onclick="num0()" class="zeroBtn">0</button>
+                <button onclick="add()" >+</button>
+                <button onclick="reset()" class="reset">AC</button>
+                <button onclick="result()" class="result">=</button>
+                
             </div>
         </div>
-       
+
     </main>
 </body>
 
