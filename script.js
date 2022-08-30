@@ -23,12 +23,17 @@ function result() {
 
     let finalResultString = (getInputValue.value).replace(/[&\=\\#,()$~'":?<>@{}A-Za-z]/g, '');
 
-    getInputValue.value = `${eval(finalResultString)}`;
-
-    function setlabel(finalResultString) {
+    if(finalResultString === ""){
+        getInputValue.value = `NaN`;
+        fetchExpBox.innerText = `Enter Valid Number`;
+    }else{
+        getInputValue.value = `${eval(finalResultString)}`;
         fetchExpBox.innerText = `${finalResultString} `;
     }
-    setlabel(finalResultString);
+}
+
+function clearLastString(){
+    getInputValue.value = (getInputValue.value).slice(0,-1);
 }
 
 function reset() {
