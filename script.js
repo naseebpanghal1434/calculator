@@ -1,4 +1,5 @@
 const getInputValue = document.querySelector("#inputNumbersID");
+getInputValue.disabled = true;
 
 const num1 =  () => getInputValue.value += 1;
 const num2 =  () => getInputValue.value += 2;
@@ -34,9 +35,31 @@ function result() {
 
 function clearLastString(){
     getInputValue.value = (getInputValue.value).slice(0,-1);
+    fetchExpBox.innerText = "";
+
 }
 
 function reset() {
     getInputValue.value = ""; 
     fetchExpBox.innerText = "";
 }
+
+getInputValue.addEventListener('keypress', function (e){
+    let keyEntered = e.which || e.keyCode;
+    if(keyEntered >47 && keyEntered <58) {
+        return true;
+    }else if(keyEntered == 190){
+        return true;
+    }else if(keyEntered >41 && keyEntered <44){
+        return true
+    }else if(keyEntered == 45){
+        return true;
+    }else if(keyEntered == 47){
+        return true;
+    }else if(keyEntered == 13){
+        return result();
+    }
+    else{
+        return fetchExpBox.innerText = `Enter Valid Number`;
+    }
+})
