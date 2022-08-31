@@ -5,16 +5,18 @@
 .container{
     display: flex;
     flex-direction:column;
-    height: 70vh; 
-    justify-content:flex-end;
-    /* background-color: aqua; */
     padding: 10px;
-}
 
+    justify-content: center;
+    align-items: center;
+}
+.container div{
+    width: 30vw;
+    height: 30vh;
+}
 .outputBox{
     display: flex;
     flex-direction: column;
-    height: 10vh;
     justify-content: center;
 }
 
@@ -22,8 +24,6 @@
     font-size: 20px;
 }
 .inputNumButtons{
-    height: 45vh;
-    padding: 10px 0 0 0;
     gap: 5px;
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -33,19 +33,14 @@
     padding-top: 10px;
 }
 .reset button{
-    /* width: 15vw; */
     width: 192px;
 }
 
 h1{
     text-align: center;
 }
-button{
-    font-size: 20px;
-}
 #inputNumbersID{
-    width: 98%;
-    height: 7vh;
+    height: 10vh;
 }
 
 
@@ -55,9 +50,26 @@ header{
     color: wheat;
 }
 
+.inputNumButtons button{
+    font-size: 30px;
+}
+
 .zeroBtn{
     grid-column: 2/ span 2
 }
 .result{
     grid-column: 3/5;
+}
+
+@media (max-width: 481px) {
+    .container{
+        display: flex;
+        flex-direction:column;
+        height: 90vh; 
+        background-color: aqua;
+    }
+    .container div{
+        width: 100%;
+        height: 100%;
+    }
 }
